@@ -46,8 +46,8 @@ async function getLocal(geoLocal_URL){
         const lat = json1.lat
         const lon = json1.lon
         getTempo(lat, lon)
-
-    }else{
+    }
+    else{
         alert('Erro ao obter localização')
         cidade_inner.innerHTML = 'Rio de Janeiro'
         getTempo2('Rio%20de%20Janeiro')
@@ -62,9 +62,11 @@ async function getTempo(lat, lon){
 
     let response = await fetch(tempo_URL)
     let json2 = await response.json()
+
     const icone = json2.weather[0].icon
     const icone_url = `http://openweathermap.org/img/wn/${icone}@2x.png`
     icone_tempo.src = icone_url
+
     console.log(json2)
 
     imprimeTemp(json2)
@@ -75,16 +77,19 @@ async function getTempo(lat, lon){
     imprimeUmidade(json2)
 }
 
+// Achar tempo
 async function getTempo2(cidade){
     const icone_tempo = document.getElementById('icone-tempo')
     let tempo_URL = `http://api.openweathermap.org/data/2.5/weather?q=${cidade}&lang=pt&appid=1124b498fe4c4e132eb3c4c95318b70a`
 
     let response = await fetch(tempo_URL)
     let json2 = await response.json()
+
     const icone = json2.weather[0].icon
     const icone_url = `http://openweathermap.org/img/wn/${icone}@2x.png`
     icone_tempo.src = icone_url
-    console.log(json2)
+
+    console.log(json2, 'Segundo')
 
     imprimeTemp(json2)
     imprimePressao(json2)
