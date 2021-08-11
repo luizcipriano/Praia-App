@@ -32,7 +32,7 @@ function formatHora(hora){
 //                                          API
 
 // Achar Cidade
-const geoLocal_URL = "http://ip-api.com/json/?fields=61439"
+const geoLocal_URL = "https://ip-api.com/json/?fields=61439"
 getLocal(geoLocal_URL)
 async function getLocal(geoLocal_URL){
     const cidade_inner = document.getElementById('cidade')
@@ -58,7 +58,7 @@ async function getLocal(geoLocal_URL){
 // Achar tempo
 async function getTempo(lat, lon){
     const icone_tempo = document.getElementById('icone-tempo')
-    let tempo_URL = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt&appid=1124b498fe4c4e132eb3c4c95318b70a`
+    let tempo_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt&appid=1124b498fe4c4e132eb3c4c95318b70a`
 
     let response = await fetch(tempo_URL)
     let json2 = await response.json()
