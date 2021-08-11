@@ -17,6 +17,9 @@ body{
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     overflow: hidden;
+    background-image: url(https://i.pinimg.com/564x/4d/ce/3a/4dce3afd7081e79063132aa7a16902e0.jpg);
+    background-size: cover;
+    
 }
 
 main{
@@ -28,7 +31,7 @@ main{
 
 #menu{
     width: 81px;
-    height: 96%;
+    height: 90%;
     border-bottom-right-radius: 40px;
     background-color: #1B1B1B;
     box-shadow: 0px 4px 4px #0000004b;
@@ -57,27 +60,28 @@ main{
     overflow: hidden;
 }
 
+#tipo-prato div{
+    transition: ease 0.6s;
+    cursor: pointer;
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 15px;
+}
 
 
 #tipo-prato div p{
-    cursor: pointer;
+    margin: auto;
     writing-mode:vertical-rl;
     transform: rotate(180deg);
     color: #969696;
     font-size: 25px;  
-    width: fit-content;
     font-weight: 600;
-    padding: 22px;
-    transition: ease 0.6s;
 }
 
-#tipo-prato div p:hover{
+#tipo-prato div:hover{
     background-color: #FEB800;
     color: #1B1B1B;
-    
 }
-
-
 
 
 #content{
@@ -118,17 +122,53 @@ main{
     line-height: 50px;
     width: 100%;
     height: 96px;
-    margin: 10px 15px 0 15px;
-    color: #1B1B1B;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.254);
+    margin: 10px 15px 0 35px;
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.371);
 }
+
+#info{
+    display: flex;
+    
+    margin: 10px;
+    
+}
+
+.section{
+    width: 100%;
+    height: 250px;
+    margin: 5px;
+    background-image: linear-gradient(to top, #ffffffa6, #ffffff52);
+    border-radius: 4px;
+}
+
+.section div{
+    width: fit-content;
+    margin: auto;
+
+}
+
+.section div i{
+    color: white;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.371);
+    margin-top: 5px;
+}
+
+#temp{
+    margin-right: 2.5px;
+}
+
+#mar{
+    margin-left: 2.5px;
+}
+
 
 footer{
     display: flex;
     width: 414px;
     height: 81px;
     justify-content: space-around;
-    background-color: #ffff;
+    background-color: #f4f3ee;
     position: absolute;
     bottom: 0;
     box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.15);
@@ -140,13 +180,12 @@ footer{
 footer div{
     margin: auto;
     cursor: pointer;
-    
+    padding: 6px;
+    border-radius: 15px;
+    width: 25px;
+    transition: transform .3s ease-in-out;
 }
 
-
-footer div img:hover{
-    transform: scale(1.05);
+footer div:hover{
+    transform: rotate(360deg);
 }
-
-
-
