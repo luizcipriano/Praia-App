@@ -39,7 +39,7 @@ async function getLocal(geoLocal_URL){
     let resp = await fetch(geoLocal_URL)
     let json1 = await resp.json()
     
-    if(json1.status == 'OK'){
+    if(resp){
         console.log(json1)
         const cidade = json1.city
         cidade_inner.innerHTML = cidade
