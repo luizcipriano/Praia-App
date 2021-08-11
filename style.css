@@ -19,7 +19,8 @@ body{
     overflow: hidden;
     background-image: url(https://i.pinimg.com/564x/4d/ce/3a/4dce3afd7081e79063132aa7a16902e0.jpg);
     background-size: cover;
-    
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 main{
@@ -169,11 +170,10 @@ footer{
     height: 81px;
     justify-content: space-around;
     background-color: #f4f3ee;
-    position: absolute;
-    bottom: 0;
     box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.15);
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
+    transform: translateY(-81px);
     
 }
 
