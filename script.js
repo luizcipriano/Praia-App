@@ -39,18 +39,19 @@ async function getLocal(geoLocal_URL){
     let resp = await fetch(geoLocal_URL)
     let json1 = await resp.json()
     
-    
-    .then(response => {
+    if(json1.status == 'OK'){
         console.log(json1)
         const cidade = json1.city
         cidade_inner.innerHTML = cidade
         const lat = json1.lat
         const lon = json1.lon
         getTempo(lat, lon)
-    })
-    
-    .catch(error => getTempo2('Rio%20de%20Janeiro'))
 
+    }else{
+        const cidade = json1.city
+        cidade_inner.innerHTML = cidade
+        getTempo2('Rio%20de%20Janeiro')
+    }
     
 }
 
