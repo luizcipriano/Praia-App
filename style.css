@@ -39,8 +39,12 @@ main{
     #menu{
         width: 75px;
         height: 87%;
-        
+        border-bottom-right-radius: 40px;
+        background-color: #1B1B1B;
+        box-shadow: 0px 4px 4px #0000004b;
+        overflow: hidden;    
     }
+
     #img-perfil{
         width: 35px;
         height: 35px;
