@@ -38,9 +38,9 @@ async function getLocal(geoLocal_URL){
     const cidade_inner = document.getElementById('cidade')
     let resp = await fetch(geoLocal_URL)
     let json1 = await resp.json()
+    console.log(json1)
     
-    if(resp){
-        console.log(json1)
+    if(json1.status === 'success'){
         const cidade = json1.city
         cidade_inner.innerHTML = cidade
         const lat = json1.lat
@@ -48,6 +48,7 @@ async function getLocal(geoLocal_URL){
         getTempo(lat, lon)
 
     }else{
+        alert('Erro ao obter localização')
         const cidade = json1.city
         cidade_inner.innerHTML = cidade
         getTempo2('Rio%20de%20Janeiro')
