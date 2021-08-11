@@ -49,8 +49,7 @@ async function getLocal(geoLocal_URL){
 
     }else{
         alert('Erro ao obter localização')
-        const cidade = json1.city
-        cidade_inner.innerHTML = cidade
+        cidade_inner.innerHTML = 'Rio de Janeiro'
         getTempo2('Rio%20de%20Janeiro')
     }
     
