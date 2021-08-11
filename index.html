@@ -28,30 +28,59 @@
 
             <div id="content">
                 <header>
-                    <div id="horas">
-                        oi
+                    <div id="hora-atual">
+                        <span id="horas"></span>:<span id="minutos"></span>
                     </div>
                     <div id="header-icons">
                         <img src="assets/pesquisa.png">
                         <img src="assets/galeria.png">
                     </div>
                 </header>
-                <h1 id="title-home">João, </br><span> hoje faz sol</span></h1>
+                <div id="title">
+                    <h1 id="title-home">João, </br> <span>Agora faz sol</span></br>no <span id="cidade"></span></h1>
+                    <img src="#" id="icone-tempo">
+                </div>
                 <div id="info">
                     <section class="section" id="temp">
                         <div>
                             <i class="large material-icons">filter_drama</i>
                         </div>
-                        <div>
-
+                        <div class="informacoes">
+                            <p>Temp : <span id="temp-atual"></span> °C</p>
+                            <p class="temp-min-p">
+                                Min: <span id="temp-minima"></span> °C
+                                Max: <span id="temp-maxima"></span> °C</p>
+                            </br>
+                            <p>Pressão : <span id="pressao"></span> hPa</p>
+                            </br>
+                            <p>Umidade: <span id="umidade"></span>%</p>
+                            </br>
+                            <p>Vento: <span id="vento-velo"></span> km/h</p>
+                            <p class="temp-min-p">
+                                Ang: <span id="vento-ang"></span><sup>o</sup>
+                            </p>
+                            
                         </div>
                     </section>
                     <section class="section" id="mar">
                         <div>
                             <i class="large material-icons">beach_access</i>
                         </div>
-                        <div>
-
+                        <div class="informacoes">
+                            <p>Sensação Térmica</p>
+                            <h4 id="sensacao-title"><span id="sensacao"></span> °C</h4>
+                            </br>
+                            <p id="sensacao-title">Nascer do Sol</p>
+                            <div>
+                                <span id="nascer-sol-hora"></span>:<span id="nascer-sol-minuto"></span>
+                            </div>
+                            </br>
+                            <p id="sensacao-title">Pôr do Sol</p>
+                            <div>
+                                <span id="por-sol-hora"></span>:<span id="por-sol-minuto"></span>
+                            </div>
+                            </br>
+                            
                         </div>
                     </section>
                 </div>
