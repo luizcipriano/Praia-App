@@ -203,7 +203,7 @@ main{
 
 .section{
     width: 100%;
-    height: 260px;
+    height: fit-content;
     margin: 5px;
     background-image: linear-gradient(to top, #ffffffa6, #ffffff52);
     border-radius: 5px;
