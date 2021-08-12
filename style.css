@@ -193,6 +193,10 @@ main{
     align-self: center;
 }
 
+#icone-tempo{
+    overflow: hidden;
+}
+
 
 
 #info{
