@@ -65,6 +65,12 @@ main{
         line-height: 2.9rem;
         text-align: left;
     }
+
+    #title img{
+        width: 75px;
+        height: 75px;
+        align-self: center;
+    }
 }
 
 
@@ -96,6 +102,12 @@ main{
         text-shadow: 0 4px 15px rgba(0, 0, 0, 0.371);
         line-height: 2.9rem;
         text-align: left;
+    }
+
+    #title img{
+        width: 100px;
+        height: 100px;
+        align-self: center;
     }
     
 }
@@ -189,11 +201,7 @@ main{
     overflow: hidden;
 }
 
-#title img{
-    width: 100px;
-    height: 100px;
-    align-self: center;
-}
+
 
 #info{
     display: flex;
