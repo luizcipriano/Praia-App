@@ -80,7 +80,7 @@ async function getTempo(lat, lon){
 // Achar tempo
 async function getTempo2(cidade){
     const icone_tempo = document.getElementById('icone-tempo')
-    let tempo_URL = `http://api.openweathermap.org/data/2.5/weather?q=${cidade}&lang=pt&appid=1124b498fe4c4e132eb3c4c95318b70a`
+    let tempo_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&lang=pt&appid=1124b498fe4c4e132eb3c4c95318b70a`
 
     let response = await fetch(tempo_URL)
     let json2 = await response.json()
