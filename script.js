@@ -91,6 +91,7 @@ async function getTempo2(cidade){
 
     console.log(json2, 'Segundo')
 
+    imprimeTempoAtual(json2)
     imprimeTemp(json2)
     imprimePressao(json2)
     imprimeVento(json2)
@@ -122,6 +123,7 @@ function formatTemperatura(temp){
     return Math.round(Number(temp) - 273.15)
 }
 
+
 // Pressão
 function imprimePressao(data){
     const pressao_inner = document.getElementById('pressao')
@@ -129,6 +131,7 @@ function imprimePressao(data){
     const pressao = data.main.pressure
     pressao_inner.innerHTML = pressao
 }
+
 
 // Vento
 function imprimeVento(data){
@@ -145,6 +148,7 @@ function formatVelocidade(velo){
     return Math.round(Number(velo) * 3.6)
 }
 
+
 // Sensação
 function imprimeSensacao(data){
     const sensacao_inner = document.getElementById('sensacao')
@@ -152,6 +156,7 @@ function imprimeSensacao(data){
     const sensacao = formatTemperatura(data.main.feels_like)
     sensacao_inner.innerHTML = sensacao
 }
+
 
 // Sol
 function imprimeSol(data){
@@ -182,10 +187,31 @@ function imprimeSol(data){
     por_hora_inner.innerHTML = por_hours
 }
 
+
 // Umidade
 function imprimeUmidade(data){
     const umidade_inner = document.getElementById('umidade')
 
     const umidade = data.main.humidity
     umidade_inner.innerHTML = umidade
+}
+
+
+// Tempo Atual
+function imprimeTempoAtual(data){
+    const tempo_atual_inner = document.getElementById('tempo-local-atual')
+    const descricao_tempo_inner = document.getElementById('descricao-tempo')
+
+    let tempo_atual = data.weather[0].main
+    let descricao_tempo = data.weather[0].description
+
+    descricao_tempo_inner.innerHTML = formatText(descricao_tempo) 
+
+
+
+    tempo_atual_inner.innerHTML = tempo_atual
+}
+
+function formatText(texto){
+    return texto[0].toUpperCase() + texto.slice(1)
 }
