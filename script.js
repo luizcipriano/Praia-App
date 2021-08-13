@@ -48,11 +48,10 @@ async function getLocal(geoLocal_URL){
         getTempo(lat, lon)
     }
     else{
-        alert('Erro ao obter localização com a API 1')
+        alert('Erro ao obter localização')
         cidade_inner.innerHTML = 'Rio de Janeiro'
         getTempo2('Rio%20de%20Janeiro')
     }
-    
 }
 
 // Achar tempo
@@ -135,13 +134,9 @@ function imprimePressao(data){
 
 // Vento
 function imprimeVento(data){
-    const vento_ang_inner = document.getElementById('vento-ang')
     const vento_velo_inner = document.getElementById('vento-velo')
-
-    const vento_ang = data.wind.deg
-    const vento_velo = data.wind.speed
-    vento_ang_inner.innerHTML = vento_ang
-    vento_velo_inner.innerHTML = formatVelocidade(vento_velo)
+    
+    vento_velo_inner.innerHTML = formatVelocidade(data.wind.speed)
 }
 
 function formatVelocidade(velo){
@@ -153,8 +148,7 @@ function formatVelocidade(velo){
 function imprimeSensacao(data){
     const sensacao_inner = document.getElementById('sensacao')
 
-    const sensacao = formatTemperatura(data.main.feels_like)
-    sensacao_inner.innerHTML = sensacao
+    sensacao_inner.innerHTML = formatTemperatura(data.main.feels_like)
 }
 
 
@@ -203,13 +197,123 @@ function imprimeTempoAtual(data){
     const descricao_tempo_inner = document.getElementById('descricao-tempo')
 
     let tempo_atual = data.weather[0].main
+    let clouds = data.clouds.all
+    console.log(clouds)
     let descricao_tempo = data.weather[0].description
+    let tempo_id = data.weather[0].id
 
     descricao_tempo_inner.innerHTML = formatText(descricao_tempo) 
 
+    switch(tempo_id){
+        // nublado
+        case 800:
+            tempo_atual_inner.innerHTML = 'O céu está limpo'
+            break
+        case 801:
+            tempo_atual_inner.innerHTML = 'poucas nuvens'
+            break
+        case 802:
+            tempo_atual_inner.innerHTML = 'algumas nuvens'
+            break
+        case 803:
+            tempo_atual_inner.innerHTML = 'parcialmente nublado'
+            break
+        case 804:
+            tempo_atual_inner.innerHTML = 'tempo nublado'
+            break
+        
+        // tempo misto
+        case 701:
+            if(clouds >= 80) tempo_atual_inner.innerHTML = 'pancadas de chuva'
+            else if(clouds >= 60) tempo_atual_inner.innerHTML = 'chuva moderada'
+            else if (clouds > 40) tempo_atual_inner.innerHTML = 'chuva fraca'
+            else if (clouds >= 0) tempo_atual_inner.innerHTML = 'nublado'
+        break
 
-
-    tempo_atual_inner.innerHTML = tempo_atual
+        // chuva
+        case 500:
+            tempo_atual_inner.innerHTML = 'chuva fraca'
+            break
+        case 501:
+            tempo_atual_inner.innerHTML = 'chuva moderada'
+            break
+        case 502:
+            tempo_atual_inner.innerHTML = 'chuva forte-moderada'
+            break
+        case 503:
+            tempo_atual_inner.innerHTML = 'chuva forte'
+            break
+        case 504:
+            tempo_atual_inner.innerHTML = 'chuva muito forte'
+            break
+        case 521:
+            tempo_atual_inner.innerHTML = 'chuva leve em nuvens passageiras'
+            break
+        case 522:
+            tempo_atual_inner.innerHTML = 'chuva intensa em nuvens passageiras'
+            break
+        case 531:
+            tempo_atual_inner.innerHTML = 'pancadas de chuva'
+            break
+        
+        // chuvisco
+        case 300:
+            tempo_atual_inner.innerHTML = 'chuvisco levo'
+            break
+        case 301:
+            tempo_atual_inner.innerHTML = 'chuvisco'
+            break
+        case 302:
+            tempo_atual_inner.innerHTML = 'chuvisco forte'
+            break
+        case 310:
+            tempo_atual_inner.innerHTML = 'chuvisco com chuva'
+            break
+        case 311:
+            tempo_atual_inner.innerHTML = 'chuvisco'
+            break
+        case 312:
+            tempo_atual_inner.innerHTML = 'chuvisco com chuva forte'
+            break
+        case 313:
+            tempo_atual_inner.innerHTML = 'chuvisco em nuvens passageiras'
+            break
+        case 314:
+            tempo_atual_inner.innerHTML = 'chuvisco forte com chuva'
+            break
+        case 321:
+            tempo_atual_inner.innerHTML = 'chuvisco em nuvens passageiras'
+            break
+         
+        // tempestade
+        case 200:
+            tempo_atual_inner.innerHTML = 'tempestade com chuva leve'    
+            break
+        case 201:
+            tempo_atual_inner.innerHTML = 'tempestade com chuva moderada'
+            break
+        case 202:
+            tempo_atual_inner.innerHTML = 'tempestade com chuva forte'
+            break
+        case 210:
+            tempo_atual_inner.innerHTML = 'trovoadas leves'
+            break
+        case 211:
+            tempo_atual_inner.innerHTML = 'trovoadas'
+            break
+        case 212:
+            tempo_atual_inner.innerHTML = 'trovoadas fortes'
+            break
+        case 230:
+            tempo_atual_inner.innerHTML = 'trovoadas com chuvisco leve'
+            break
+        case 231:
+            tempo_atual_inner.innerHTML = 'trovoadas com chuvisco'
+            break
+        case 232:
+            tempo_atual_inner.innerHTML = 'trovoadas com chuvisco forte'
+            break
+    }
 }
 
 function formatText(texto){

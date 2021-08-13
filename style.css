@@ -207,15 +207,16 @@ main{
 
 #header-icons{
     width: 70px;
-    height: 400px;
-    position: relative;
+    height: 50px;
+    
     display: flex;
     justify-content: space-around;
 }
 
 #header-icons img{
     cursor: pointer;
-    position: absolute;
+    width: 20px;
+    height: 20px;
 }
 
 #header-icons img:hover{
@@ -243,7 +244,8 @@ main{
 
 #descricao-tempo{
     text-align: center;
-    padding: 3px;
+    font-weight: 600;
+    padding: 2px;
     background-color: #f4f3ee62;
     border-radius: 5px;
 }
@@ -265,21 +267,31 @@ main{
     margin-top: 5px;
 }
 
+.temp-atual-p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
 .informacoes{
     margin: 0 10px;
 }
 
-#sensacao-title{
+.info-title{
+    text-align: center;
+}
+
+.sensacao-title{
     width: fit-content;
     margin: 0 auto;
+    font-size: 15px;
+    font-weight: 600;
 }
 
-#temp{
-    margin-right: 2.5px;
-}
-
-#mar{
-    margin-left: 2.5px;
+.info{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 footer div{
